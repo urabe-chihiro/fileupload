@@ -1,12 +1,12 @@
 (function(window,undefined){
   var fileupload =  new Fileupload({
-    btn: $('#js-btn-upload'),
-    renderWrapper: $('#js-thumbnail-wrapper'),
-    template: '<div class="col-xs-6 col-md-3">' +
-                  '<a href="#" class="thumbnail">' +
+    btn: $('#js-thumb-upload__btn'),
+    renderWrapper: $('#js-thumb-upload'),
+    template: '<li class="thumb-upload__list list-unstyled">' +
+                  '<a href="#" class="">' +
                     '<img src="" height="80" >'  +
                   '</a>' +
-                '</div>',
+              '</li>',
       limit: 5,
       callback: function(){
         //表示数によって、アップロードボタンのスタイル切り替え

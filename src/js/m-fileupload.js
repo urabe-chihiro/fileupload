@@ -71,8 +71,8 @@
     this.thumb.find('img').attr('width',(_imgWidth > _imgHeight) ? 'auto' : this.thumb.innerWidth());
 
     //画像センタリング
-    _thumbLeft = this.thumb.innerWidth()/2 - ((_imgWidth > _imgHeight) ? this.thumb.find('img').innerHeight()/2 : this.thumb.find('img').innerWidth()/2)
-    this.thumb.find('img').css('margin-left',_thumbLeft + 'px');
+    // _thumbLeft = this.thumb.innerWidth()/2 - ((_imgWidth > _imgHeight) ? this.thumb.find('img').innerHeight()/2 : this.thumb.find('img').innerWidth()/2)
+    // this.thumb.find('img').css('margin-left',_thumbLeft + 'px');
   }
 
 

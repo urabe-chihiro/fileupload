@@ -18,12 +18,11 @@ gulp.task("server", function() {
 
 //compass
 gulp.task('compass',function(){
-  return gulp.src('assets/scss/**/**.scss')
-  .pipe(plumber())
+  return gulp.src('src/scss/**/**.scss')
   .pipe(compass({
     config_file: 'config.rb',
-    css: 'assets/css/',
-    sass: 'assets/scss/',
+    css: 'dist/',
+    sass: 'src/scss/',
     sourcemap: true
   }))
   .pipe(browser.reload({stream:true}));
@@ -40,9 +39,9 @@ gulp.task('autoprefixer', function () {
 });
 
 gulp.task('default',['server'],function(){
-  gulp.watch('./scss/**/*.scss', ['compass']);
+  gulp.watch('src/scss/**/*.scss', ['compass']);
   gulp.watch("./**/*.html").on("change", browser.reload);
-  gulp.watch("./js/**/*.js").on("change", browser.reload);
+  gulp.watch("src/js/**/*.js").on("change", browser.reload);
   //autoprefixer
   //gulp.watch(['assets/css/**/*.css'],['autoprefixer']);
 });
