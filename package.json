@@ -1,0 +1,22 @@
+{
+  "name": "fileupload",
+  "version": "1.0.0",
+  "description": "モック様にサムネイルリストにアップロードモジュールを作成",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miyai-chihiro/fileupload.git"
+  },
+  "author": "Chihiro Miyai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miyai-chihiro/fileupload/issues"
+  },
+  "homepage": "https://github.com/miyai-chihiro/fileupload",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
