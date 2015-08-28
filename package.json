@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/miyai-chihiro/fileupload",
   "devDependencies": {
+    "bower": "^1.5.2",
     "gulp": "^3.9.0"
   }
 }
