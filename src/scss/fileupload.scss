@@ -1,31 +1,80 @@
-.thumb-upload__lists {
-  border: 1px solid #efefef;
-  padding: 16px;
-  min-height: 160px;
-}
 .thumb-upload__lists::after {
   content: '';
   clear: both;
   display: block;
 }
 .thumb-upload__list {
+  position: relative;
   float: left;
   margin-right: 8px;
   width: 160px;
   height: 160px;
   overflow: hidden;
+  border-radius: 100px;
+  animation: show .3s ease-in;
+  &:hover .thumb-upload__remove {
+    transform: translateX(0px);
+    animation: slide .2s ease-in-out;
+  };
+
+  &.show {
+    transform: scale(1);
+  }
 }
-.thumb-upload__btn {
-  position: relative;
-  width: 150px;
-  height: 40px;
-  line-height: 40px;
+
+.thumb-upload__remove {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.7);
+  color: #888;
+  font-size: 20px;
+  line-height: 8em;
   text-align: center;
-  border-radius: 4px;
+  transform: translateX(160px);
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateX(160px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.thumb-upload__btn {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 32px;
+  text-align: center;
+  border-radius: 80px;
   color: #fff;
   background-color: #5bc0de;
   border-color: #46b8da;
+  &.disabled {
+    background-color: #eee;
 
+    &:hover {
+      background-color: #eee;
+    };
+  }
   &:hover {
     background-color: #4ca9c5;
     border-color: transparent;
@@ -36,6 +85,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 150px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
 }

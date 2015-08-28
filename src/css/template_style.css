@@ -1,0 +1,22 @@
+.table { display: table;}
+.cell {display: table-cell;}
+
+.absolute { position: absolute;}
+.relative { position: relative;}
+
+.h170 { height: 170px;}
+
+.padding-none { padding: 0px !important;}
+
+.pl16 { padding-left: 16px;}
+.mt40 { margin-top: 40px;}
+.ml16 { margin-left: 16px;}
+
+.centering {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}

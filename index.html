@@ -5,6 +5,7 @@
   <title>サムネイル画像アップロード</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="dist/fileupload.css">
+  <link rel="stylesheet" href="src/css/template_style.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -18,23 +19,20 @@
         </button>
         <a class="navbar-brand" href="#">File Upload </a>
       </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
     </div>
   </nav>
   <div class="container" style="padding-top: 80px;">
-
-        <ul id="js-thumb-upload" class="thumb-upload__lists"></ul>
-        <div id="js-thumb-upload__btn" class="thumb-upload__btn">
+    <div class="clearfix">
+      <div class="pull-left">
+        <ul id="js-thumb-upload" class="thumb-upload__lists padding-none"></ul>
+      </div>
+      <div class="pull-left relative h170 ml16">
+        <div id="js-thumb-upload__btn" class="thumb-upload__btn centering">
           <input type="file" class="">
-          画像をアップロード
+          ＋
         </div>
-
+      </div>
+    </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
