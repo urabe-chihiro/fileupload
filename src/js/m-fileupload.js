@@ -3,7 +3,7 @@
   var Fileupload = function(_options){
     this.postedfile = $('.file-posted');
     $.extend(true,this,_options);
-    this.before();
+    this.before && this.before();
     this.initEvents();
   };
   Fileupload.prototype.initEvents = function(){
@@ -16,7 +16,7 @@
     });
     this.renderWrapper.on('click', this.removeBtn ,function(e){
         var _target = $(e.target).closest('.thumb-upload__list');
-        _self.removeCallback(_target);
+        _self.removeCallback && _self.removeCallback(_target);
         _target.remove();
         _self.toggleThumbDisplay();
     });
