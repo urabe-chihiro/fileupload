@@ -8,10 +8,10 @@
   };
   Fileupload.prototype.initEvents = function(){
     var _self = this;
-    this.btn.on('change','input',function(e){
+    $(this.btn).on('change','input',function(e){
       if(_self.checkFileApiSupport()){
         _self.readImageFile(e.target.files);
-        _self.btn.val('');
+        $(e.target).val('');
       };
     });
     this.renderWrapper.on('click', this.removeBtn ,function(e){
@@ -62,6 +62,7 @@
       .attr('id',this.imageFile.id)
       .find('img')
       .attr('src',this.imageFile.url)
+      .attr('alt',this.imageFile.name)
       .attr('role','posted-file');
     this.renderWrapper.append(this.thumb);
   },
