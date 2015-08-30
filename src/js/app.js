@@ -32,7 +32,7 @@
                     '×' +
                   '</div>' +
                 '</li>',
-        limit: 10,
+        limit: 5,
         setLayout: true,
         before: function(){
           //localstorage にあるデータを表示

@@ -26,18 +26,40 @@
       <div class="pull-left">
         <ul id="js-thumb-upload" class="thumb-upload__lists padding-none"></ul>
       </div>
-      <div class="pull-left relative h170 ml16">
+      <div class="pull-left relative h100 ml16">
         <div id="js-thumb-upload__btn" class="thumb-upload__btn centering">
           <input type="file" class="">
           ＋
         </div>
       </div>
     </div>
-
+    <div class="alert alert-info mt40">
+      <strong>Info!</strong> 画像のみ、5個までアップロードOK
+    </div>
+    <pre>
+      var fileupload =  new Fileupload({
+        id: 'thumbnail001',
+        data: {},
+        btn: '#js-thumb-upload__btn',
+        removeBtn: '.js−thumb-remove',
+        renderWrapper: $('#js-thumb-upload'),
+        template: '',
+        limit: 5,
+        setLayout: true,
+        before: function(){
+          //読み込み時にする処理
+        },
+        removeCallback: function(){
+          //削除ボタンを押したあとの処理
+        },
+        callback: function(){
+          //ファイルをアップロードしたあとの処理
+        }
+      });
+    </pre>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">

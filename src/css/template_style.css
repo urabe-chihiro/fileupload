@@ -4,6 +4,7 @@
 .absolute { position: absolute;}
 .relative { position: relative;}
 
+.h100 { height: 100px;}
 .h170 { height: 170px;}
 
 .padding-none { padding: 0px !important;}
@@ -19,13 +20,4 @@
   right: 0;
   bottom: 0;
   margin: auto;
-}
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-.grayscale {
-    background-color: rgba(0,0,0,.6);
 }

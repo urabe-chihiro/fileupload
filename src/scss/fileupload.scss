@@ -10,8 +10,8 @@
   animation: show .3s ease-in;
   .thumb-upload__img {
     overflow: hidden;
-    width: 160px;
-    height: 160px;
+    width: 100px;
+    height: 100px;
     border-radius: 100px;
   }
   &:hover .thumb-upload__remove {
@@ -25,8 +25,8 @@
 
 .thumb-upload__remove {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -20px;
+  right: -16px;
   width: 40px;
   height: 40px;
   color: #d51524;
