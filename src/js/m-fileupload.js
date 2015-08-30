@@ -3,27 +3,23 @@
   var Fileupload = function(_options){
     this.postedfile = $('.file-posted');
     $.extend(true,this,_options);
-    this.initChangeEvents();
-    this.initRemoveEvent();
+    this.before();
+    this.initEvents();
   };
-  Fileupload.prototype.initChangeEvents = function(){
-    var self = this;
+  Fileupload.prototype.initEvents = function(){
+    var _self = this;
     this.btn.on('change','input',function(e){
-      if(self.checkFileApiSupport()){
-        self.readImageFile(e.target.files);
-        self.btn.val('');
+      if(_self.checkFileApiSupport()){
+        _self.readImageFile(e.target.files);
+        _self.btn.val('');
       };
     });
-  };
-  Fileupload.prototype.initRemoveEvent = function(){
-    var self = this;
-    $(document).on('click',this.removeBtn,function(e){
-      self.removeThumb(e.target);
+    this.renderWrapper.on('click', this.removeBtn ,function(e){
+        var _target = $(e.target).closest('.thumb-upload__list');
+        _self.removeCallback(_target);
+        _target.remove();
+        _self.toggleThumbDisplay();
     });
-  },
-  Fileupload.prototype.removeThumb = function(_target){
-    $(_target).closest('.thumb-upload__list').remove();
-    this.toggleThumbDisplay();
   };
   Fileupload.prototype.readImageFile = function(_files){
     var self = this;
@@ -33,6 +29,7 @@
         //ファイルの読み込みが完了したら
         reader.onload = function(e){
           self.imageFile = {
+            id: _file.lastModified,
             name : _file.name,
             lastModified: _file.lastModified,
             url: e.target.result
@@ -58,9 +55,12 @@
       return false;
     }
   };
+
   Fileupload.prototype.renderThumb = function(){
     this.thumb = $(this.template);
-    $(this.thumb).find('img')
+    $(this.thumb)
+      .attr('id',this.imageFile.id)
+      .find('img')
       .attr('src',this.imageFile.url)
       .attr('role','posted-file');
     this.renderWrapper.append(this.thumb);
