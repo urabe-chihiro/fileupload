@@ -4,6 +4,7 @@ var gulp = require("gulp"),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     ejs = require("gulp-ejs"),
+    nano = require('gulp-cssnano'),
     browser = require("browser-sync");
 
 //server
@@ -26,6 +27,13 @@ gulp.task('compass',function(){
     sourcemap: true
   }))
   .pipe(browser.reload({stream:true}));
+});
+
+// css minify
+gulp.task('nano',function(){
+  return gulp.src('./src/css')
+    .pipe(nano())
+    .pipe(gulp.dest('./dist'));
 });
 
 // autoprefixer
