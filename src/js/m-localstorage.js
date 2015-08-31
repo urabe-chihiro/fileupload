@@ -1,4 +1,3 @@
-var localStorage = localStorage;
 var mLocalStorage = {
     storage: localStorage,
     setData: function(_id,_data){
@@ -13,4 +12,7 @@ var mLocalStorage = {
         this.storage.remove(_id);
         //console.log(this.storage.getITem(_id));
     }
-}
+};
+
+module.exports = mLocalStorage;
+
